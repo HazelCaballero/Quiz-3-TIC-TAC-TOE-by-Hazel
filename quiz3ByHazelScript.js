@@ -19,21 +19,12 @@ const boxes = [
 
     let moves = []
 
-    //estoy intentado almacenar los movimientos de x para luego consultar cuales estan llenas o no y crear
-    // la funcion que colo una O en un espacio vacio, pero algo estoy haciendo mal y aun no se me ocurre
-    //mas lo comento porque quiero hacer una actualizacion en git un rato antes de salir para evitar 
-    // falta de respaldo
+    //logre que se almacenen las movidas x, pero aun no aplico funcionalidad para que la pc marque "O"
 boxes.forEach(cell => {
     cell.addEventListener("click", function() {
         cell.innerText = "X";
+        moves.push(cell.id)
+        localStorage.setItem("storMoves", (moves));
     });
-    localStorage.setItem("storMoves", JSON.stringify(moves))
+    
 });
-
-
-
-
-
-
-
-
