@@ -51,35 +51,73 @@ main{ grid-area: main;
     border-right: solid;
     padding: 40px;
 }
+.box0:hover{
+    background-color: rgb(249, 249, 162);
+    border-radius: 50px;
+}
 .box1{
     border-bottom: solid;
     padding: 40px;
-}.box2{
+}
+.box1:hover{
+    background-color: rgb(249, 249, 162);
+    border-radius: 50px; 
+}
+.box2{
     border-bottom: solid;
     border-left: solid;
     padding: 40px;
+}
+.box2:hover{
+    background-color: rgb(249, 249, 162);
+border-radius: 50px;
 }
 .box3{
     border-right: solid;
     padding: 40px;
-}.box4{
+}
+.box3:hover{
+    background-color: rgb(249, 249, 162);
+    border-radius: 50px;
+}
+.box4{
     padding: 40px;
+}
+.box4:hover{
+    background-color: rgb(249, 249, 162);
+border-radius: 50px;
 }
 .box5{
     border-left: solid;
     padding: 40px;
+}
+.box5:hover{ 
+    background-color: rgb(249, 249, 162);
+border-radius: 50px;
 }
 .box6{
     border-right: solid;
     border-top: solid;
     padding: 40px;
 }
+.box6:hover{
+    background-color: rgb(249, 249, 162);
+    border-radius: 50px;
+}
 .box7{
     border-top: solid;
     padding: 40px;
+}
+.box7:hover{
+    background-color: rgb(249, 249, 162);
+border-radius: 50px;
 }
 .box8{
     border-top: solid;
     border-left: solid;
     padding: 40px;
+}
+.box8:hover{
+    background-color: rgb(249, 249, 162);
+border-radius: 50px;
 }
