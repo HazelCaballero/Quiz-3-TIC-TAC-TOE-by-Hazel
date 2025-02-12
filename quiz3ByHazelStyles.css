@@ -62,6 +62,8 @@ main{ grid-area: main;
 .box3{
     border-right: solid;
     padding: 40px;
+}.box4{
+    padding: 40px;
 }
 .box5{
     border-left: solid;
