@@ -25,15 +25,15 @@ const boxes = [
 
     //funcion movimiento of player
     function playerMove() {
-        boxes.forEach(cell => 
-            { cell.addEventListener("click", function () {
-                    if (!gameOver) {
+        boxes.forEach(cell => { 
+            cell.addEventListener("click", function () {
+                    if (!gameOver && cell.textContent === "") {
                         cell.textContent = "X"; 
                         moves.push(cell.id);
                         localStorage.setItem("storMoves", JSON.stringify(moves)); 
                         checkWinner(); 
                         if (!gameOver) {
-                            setTimeout(() => { randomMove(); }, 600); 
+                            setTimeout(randomMove, 600); 
                         }
                     }
                 });
@@ -47,9 +47,9 @@ function randomMove() {
     if(emptyBoxes.length === 0) return;
 
 //para que la pc escoja aleatoriamente uno de esos espacios vacios y ponga en su contenido "O"
-    let pcPushORandom = Math.floor(Math.random()*emptyBoxes.length);
-    emptyBoxes[pcPushORandom].textContent ="O";
-    moves.push(emptyBoxes[pcPushORandom].id);
+    let pcMove = Math.floor(Math.random()*emptyBoxes.length);
+    emptyBoxes[pcMove].textContent ="O";
+    moves.push(emptyBoxes[pcMove].id);
     checkWinner();
 }
 
@@ -69,12 +69,12 @@ function checkWinner() {
             boxes[a].textContent ===boxes[c].textContent){
                 winner.textContent = `¡${boxes[a].textContent}gana!`
                 gameOver = true;
+                return;
                 }
             }
             //intente solucionar la mala funcion de la logica de empate porque si tenia solo el,
             //  moves.length === 9 y se ganaba en el ultimo movimiento decia empate = error logico
-            if(moves.length === 9 && boxes[a].textContent && boxes[a].textContent === 
-                boxes[b].textContent && boxes[a].textContent === boxes[c].textContent){
+            if(moves.length === 9 && !gameOver){
                     winner.textContent = "¡Es un empate!";
                     gameOver = true;
     }
@@ -86,10 +86,9 @@ btnRestart.addEventListener("click", function(){
     moves =[];
     gameOver = false
     winner.textContent ="";
-    localStorage.clear()
-}
-);
+    localStorage.clear();
+    jugadorT = "X";
+    turn.textContent = "Turno: X";
+});
 
 playerMove()
-
-
