@@ -1,0 +1,401 @@
+/* Márgenes para todos los elementos */
+* {
+    margin: 0px; /* Elimina márgenes por defecto en todos los elementos */
+}
+
+/* Estilo para la fuente personalizada Google Font */
+.matemasie-regular {
+    font-family: "Matemasie", serif; /* Establece la fuente 'Matemasie' */
+    font-weight: 400; 
+    font-style: normal; 
+}
+
+/* Estilos para el contenedor principal del juego */
+.blobalContainer {
+    background-image: url(/quiz3BYHAZEL/Quiz-3-TIC-TAC-TOE-by-Hazel/img/flowers-5596564_1280.png); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No se repite la imagen */
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    height: 635px; /* Altura del contenedor */
+    padding: 20px; /* Espaciado interno */
+    
+    /* Configuración de la cuadrícula (grid) */
+    display: grid;
+    grid-template-columns: 200px 600px; /* Dos columnas con tamaños 200px y 600px */
+    grid-template-rows: 80px 454px; /* Dos filas con tamaños 80px y 454px */
+    grid-template-areas: 
+    "header header" /* El área de la cabecera ocupa las dos columnas */
+    "aside main" /* Aside y sección principal */
+    "aside main"; /* Aside y sección principal */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    justify-items: center; /* Centra los ítems dentro de la cuadrícula */
+}
+
+/* Estilos para la cabecera del juego */
+header {
+    grid-area: header; /* Define que este elemento ocupa el área 'header' */
+    padding: 20px; /* Espaciado interno */
+    background-color: #ff8b00; /* Color de fondo */
+    text-align: center; /* Centra el texto */
+    border-radius: 30px; /* Bordes redondeados */
+    width: 300px; /* Ancho del header */
+    margin-bottom: 10px; /* Margen inferior */
+    position: relative; 
+    left: 100px; /* Desplazamiento hacia la derecha */
+}
+
+/* Estilos para la barra lateral */
+aside { 
+    grid-area: aside; /* Este elemento ocupa el área 'aside' */
+    padding: 20px; /* Espaciado interno */
+    background-color: #005145; /* Color de fondo */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+    text-align: center; /* Centra el texto */
+    display: grid; /* Usa grid para distribuir los elementos internos */
+    grid-template-columns: repeat(1, 1fr); /* Una sola columna */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; 
+    font-style: normal; 
+    border-radius: 10px; /* Bordes redondeados */
+    justify-content: center; /* Centra los ítems dentro */
+    justify-items: center; /* Centra los ítems dentro */
+    align-items: center; /* Alinea los ítems verticalmente */
+    margin-right: 10px; /* Margen derecho */
+    height: 400px; /* Altura del aside */
+    position: relative; 
+    top: 25px; /* Desplazamiento hacia abajo */
+}
+
+/* Estilos para la sección principal */
+main {
+    grid-area: main; /* Este elemento ocupa el área 'main' */
+    padding: 20px; /* Espaciado interno */
+    background-color:#ff9f85; /* Color de fondo */
+    text-align: center; /* Centra el texto */
+    display: grid; /* Usa grid para organizar los elementos */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    grid-template-rows: 100px 1fr; /* Una fila de 100px y otra de altura flexible */
+    grid-template-areas: 
+    "turN winneR" /* Área de turno y ganador */
+    "btnRestarT gameBoard"; /* Botón de reinicio y tablero de juego */
+    border-radius: 10px; /* Bordes redondeados */
+    justify-content: center; /* Centra el contenido */
+    justify-items: center; /* Centra los ítems dentro */
+    align-items: center; /* Alinea los ítems verticalmente */
+}
+
+/* Estilos para el tablero de juego */
+.gameBoard {
+    grid-area: gameBoard; /* Este elemento ocupa el área 'gameBoard' */
+    padding: 20px; /* Espaciado interno */
+    margin: 10px; /* Margen */
+    background-color:#076c7a; /* Color de fondo */
+    display: grid; /* Usa grid para distribuir las celdas */
+    grid-template-columns: repeat(3, 100px); /* Tres columnas de 100px */
+    grid-template-rows: repeat(3, 100px); /* Tres filas de 100px */
+    justify-content: center; /* Centra el contenido */
+    justify-items: center; /* Centra los ítems dentro */
+    align-items: center; /* Alinea los ítems verticalmente */
+    width: 300px; /* Ancho del tablero */
+    height: 300px; /* Altura del tablero */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 30px; /* Tamaño de la fuente */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+}
+
+/* Estilos para las celdas del tablero */
+.box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
+    padding: 30px; /* Espaciado interno */
+    border-color: #ff9f85; /* Color del borde */
+}
+
+/* Estilos de hover para las celdas */
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover, .box8:hover {
+    background-color:#ff9f85; /* Color de fondo al hacer hover */
+    border-radius: 10px; /* Bordes redondeados al hacer hover */
+}
+
+/* Bordes adicionales para cada celda del tablero */
+.box0 {
+    border-bottom: solid; /* Borde inferior */
+    border-right: solid; /* Borde derecho */
+}
+
+/* Más estilos para las celdas con bordes específicos */
+.box1 {
+    border-bottom: solid; /* Borde inferior */
+}
+
+.box2 {
+    border-bottom: solid; /* Borde inferior */
+    border-left: solid; /* Borde izquierdo */
+}
+
+.box3 {
+    border-right: solid; /* Borde derecho */
+}
+
+.box5 {
+    border-left: solid; /* Borde izquierdo */
+}
+
+.box6 {
+    border-right: solid; /* Borde derecho */
+    border-top: solid; /* Borde superior */
+}
+
+.box7 {
+    border-top: solid; /* Borde superior */
+}
+
+.box8 {
+    border-top: solid; /* Borde superior */
+    border-left: solid; /* Borde izquierdo */
+}
+
+/* Estilos para el indicador de turno */
+#turn {
+    padding-bottom: 20px; /* Espaciado inferior */
+    margin-bottom: 30px; /* Margen inferior */
+    margin-top: 30px; /* Margen superior */
+}
+
+/* Estilos para el indicador de turno */
+.turN {
+    grid-area: turN; /* Este elemento ocupa el área 'turN' */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente */
+    font-size: 30px; /* Tamaño de la fuente */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+}
+
+/* Estilos para el indicador de ganador */
+#winner {
+    padding-bottom: 20px; /* Espaciado inferior */
+    margin-bottom: 30px; /* Margen inferior */
+    margin-top: 30px; /* Margen superior */
+}
+
+/* Estilos para el indicador de ganador */
+.winneR {
+    grid-area: winneR; /* Este elemento ocupa el área 'winneR' */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente */
+    font-size: 30px; /* Tamaño de la fuente */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+}
+
+/* Estilos comunes para todos los botones */
+button {
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 10px; /* Margen */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #076c7a; /* Color base */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-style: none; /* Sin bordes */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover para los botones */
+button:hover {
+    background-color: #ff8b00; /* Color al hacer hover */
+    transform: scale(1.1); /* Agrandamiento */
+}
+
+/* Estilos para el botón de Modo */
+#btnModo {
+    grid-area: btnModo; /* Define el área 'btnModo' */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #076c7a; /* Color base */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-style: none; /* Sin bordes */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover del botón de Modo */
+#btnModo:hover {
+    background-color: #ff8b00; /* Color al hacer hover */
+    transform: scale(1.1); /* Agrandamiento */
+}
+
+/* Estilos para el botón de Reiniciar */
+#btnRestart {
+    grid-area: btnRestart; /* Define el área 'btnRestart' */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #076c7a; /* Color base */
+    font-family: "Matemasie", serif; /* Fuente personalizada */
+    font-weight: 400; /* Peso de la fuente */
+    font-style: normal; /* Estilo de la fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-style: none; /* Sin bordes */
+    color: #e1b735; /* Color del texto */
+    text-shadow: 
+    2px 2px 2px black,  
+    -2px -2px 2px black, 
+    2px -2px 2px black,  
+    -2px 2px 2px black; /* Sombra del texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover del botón de Reiniciar */
+#btnRestart:hover {
+    background-color: #ff8b00; /* Color al hacer hover */
+    transform: scale(1.1); /* Agrandamiento */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajustes para el contenedor principal en pantallas pequeñas */
+    .blobalContainer {
+        grid-template-columns: 1fr; /* Configuración de la cuadrícula para una sola columna */
+        grid-template-areas:
+            "header"
+            "aside"
+            "main"; /* Reorganización de las áreas de la cuadrícula */
+        background-size: cover;
+        background-position: center center; /* Centrar la imagen de fondo */
+        width: 100%; /* Ancho completo */
+        height: 60%; /* Ajuste de altura para pantallas pequeñas */
+        padding: 20px;
+    }
+
+    /* Ajustes para el encabezado en pantallas pequeñas */
+    header {
+        margin-left: 0; /* Remover el margen izquierdo */
+        width: auto; /* Ajuste del ancho */
+        left: 0; /* Restablecer el desplazamiento */
+        text-align: center; /* Centrar el texto */
+    }
+
+    /* Ajustes para la barra lateral en pantallas pequeñas */
+    aside {
+        height: 200px; /* Reducción de la altura */
+        margin-bottom: 20px; /* Espacio debajo */
+    }
+
+    /* Ajustes para la sección principal en pantallas pequeñas */
+    main {
+        width: 100%; /* Ajuste de ancho */
+        margin-top: 0; /* Quitar margen superior */
+        display: block;  /* Cambiar de grid a bloque */
+        padding: 0 10px; /* Espaciado a los lados */
+        position: relative; /* Posicionamiento relativo */
+        bottom: 150px; /* Ajustar la posición vertical */
+    }
+
+    /* Ajustes para el tablero de juego en pantallas pequeñas */
+    .gameBoard {
+        width: 80%; /* Ancho ajustado */
+        max-width: 300px; /* Máximo ancho */
+        height: 250px; /* Altura ajustada */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Configuración de la cuadrícula */
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center; /* Centrar los elementos */
+        justify-items: center; /* Centrar los ítems dentro de las celdas */
+        margin-top: 10px; /* Espacio en la parte superior */
+        font-size: 25px; /* Tamaño de la fuente ajustado */
+    }
+
+    /* Estilos para las celdas del tablero de juego */
+    .gameBoard div {
+        width: 20px; /* Ancho de cada celda */
+        height: 20px; /* Altura de cada celda */
+        background-color: #076c7a; /* Color de fondo */
+        display: flex; /* Usar flexbox para centrar el contenido */
+        align-items: center; /* Alineación vertical */
+        justify-content: center; /* Alineación horizontal */
+        color: #e1b735; /* Color del texto */
+        font-size: 25px; /* Tamaño de la fuente */
+        border-radius: 10px; /* Bordes redondeados */
+        transition: background-color 0.3s ease; /* Transición suave */
+    }
+
+    /* Estilos de hover para las celdas del tablero de juego */
+    .gameBoard div:hover {
+        background-color: #ff9f85; /* Cambio de color al hacer hover */
+    }
+
+    /* Ajustes para el texto de turno y ganador en pantallas pequeñas */
+    #turn, #winner {
+        font-size: 24px; /* Tamaño de fuente ajustado */
+        text-align: center; /* Centrar texto */
+        color: #e1b735; /* Color del texto */
+        margin-top: 10px; /* Añadir margen superior */
+    }
+
+    /* Ajuste de los elementos turN y winneR en pantallas pequeñas */
+    .turN,
+    .winneR {
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 10px;  /* Espacio entre los elementos */
+    }
+
+    /* Ajuste para el botón de reiniciar en pantallas pequeñas */
+    .btnRestart {
+        margin-top: 10px; /* Margen superior */
+        margin-bottom: 20px; /* Separación de los botones del Game Board */
+    }
+
+    /* Ajustes para los botones en pantallas pequeñas */
+    button {
+        width: 60%; /* Ajustar el ancho */
+        padding: 10px; /* Ajustar el padding */
+        font-size: 16px; /* Tamaño de la fuente */
+        background-color: #076c7a; /* Color de fondo */
+        color: #e1b735; /* Color del texto */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        transition: background-color 0.3s ease; /* Transición suave */
+        margin-bottom: 10px; /* Margen inferior */
+    }
+
+    /* Estilos de hover para los botones en pantallas pequeñas */
+    button:hover {
+        background-color: #ff8b00; /* Cambio de color al hacer hover */
+    }
+}

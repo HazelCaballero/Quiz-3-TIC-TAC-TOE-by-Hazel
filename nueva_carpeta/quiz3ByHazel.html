@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>TIC TAC TOE</title>
+    <!-- Enlace de estilos -->
+    <link rel="stylesheet" href="/quiz3BYHAZEL/Quiz-3-TIC-TAC-TOE-by-Hazel/quiz3ByHazelStyles.css">
+    <!-- Enlaces a las fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Matemasie&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blobalContainer">
+        <!-- Header con el título del juego -->
+        <header>
+           <h1>TIC TAC TOE</h1> 
+        </header>
+        <!-- Aside con el marcador y estadísticas del juego -->
+        <aside>
+            <div>
+                <!-- Título del marcador -->
+                <h2>Marcador actual</h2>
+            </div>
+            <!-- Subtítulo de victorias -->
+            <h2 id="victoriesTitle">Victorias</h2> 
+            <div id="victoriesContainer">
+                <!-- Contenedor para mostrar el número de victorias -->
+            </div>
+            <!-- Subtítulo de derrotas -->
+            <h2 id="defeatsTitle">Derrotas</h2>
+            <div id="defeatsContainer">
+                <!-- Contenedor para mostrar el número de derrotas -->
+            </div>
+            <!-- Subtítulo de empates -->
+            <h2>Empates</h2>
+            <div id="tiesContainer">
+                <!-- Contenedor para mostrar el número de empates -->
+            </div>
+        </aside>
+        <!-- Sección principal del juego -->
+        <main>
+            <!-- Turno actual del juego -->
+            <div class="turN">
+                <h2>Turno</h2>
+                <span id="turn">X</span> <!-- Span que muestra el turno actual -->
+            </div>
+            <!-- Botones principales para reiniciar y cambiar modos de juego -->
+            <div class="mainButtons">
+                <button class="btnRestarT" id="btnRestart">Reiniciar</button> <!-- Botón para reiniciar el juego -->
+                <button id="btnModePC">Modo contra PC</button> <!-- Botón para cambiar a modo PC -->
+                <button id="btnModeTwoPlayers">Modo dos Jugadores</button> <!-- Botón para cambiar a modo Jugador vs Jugador -->
+            </div>
+            <!-- Indicador del ganador -->
+            <div class="winneR" id="winner">
+                <!-- Elemento para mostrar el ganador -->
+            </div>
+            <!-- Tablero de juego -->
+            <div class="gameBoard">
+                <!-- Cada celda del tablero es un div individual -->
+                <div id="cell0" class="box0"></div>
+                <div id="cell1" class="box1"></div>
+                <div id="cell2" class="box2"></div>
+                <div id="cell3" class="box3"></div>
+                <div id="cell4" class="box4"></div>
+                <div id="cell5" class="box5"></div>
+                <div id="cell6" class="box6"></div>
+                <div id="cell7" class="box7"></div>
+                <div id="cell8" class="box8"></div>
+            </div>  
+        </main>
+    </div>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="/quiz3BYHAZEL/Quiz-3-TIC-TAC-TOE-by-Hazel/quiz3ByHazelScript.js"></script>
+</body>
+</html>
